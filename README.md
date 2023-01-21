@@ -34,13 +34,12 @@ gulpfile.js があるディレクトリに移動し、
 
 ローカルサーバー http://localhost:3000/ が起動し、ファイルの変更があると自動で以下のコンパイルが行われます。
 
-| 内容                               | 変更フォルダ            | 生成フォルダ                                         |
-| ---------------------------------- | ----------------------- | ---------------------------------------------------- |
-| scss ファイルの css 変換           | app/src/sass            | app/product/assets/css と themes/テーマ名/assets/css |
-| ejs ファイルの html 変換           | app/src/ejs             | app/product                                          |
-| 画像の圧縮                         | app/product/image       | themes/テーマ名/assets/image                         |
-| js ファイルのテーマへのコピー      | app/product/assets/js   | themes/テーマ名/assets/js                            |
-| フォントファイルのテーマへのコピー | app/product/assets/font | themes/テーマ名/assets/font                          |
+| 内容                          | 変更フォルダ          | 生成フォルダ                                         |
+| ----------------------------- | --------------------- | ---------------------------------------------------- |
+| scss ファイルの css 変換      | app/src/sass          | app/product/assets/css と themes/テーマ名/assets/css |
+| ejs ファイルの html 変換      | app/src/ejs           | app/product                                          |
+| 画像の圧縮                    | app/product/image     | themes/テーマ名/assets/image                         |
+| js ファイルのテーマへのコピー | app/product/assets/js | themes/テーマ名/assets/js                            |
 
 ※変換後のファイルは自動で上書きされてしまうため直接触らないようにしましょう。
 
@@ -63,8 +62,6 @@ gulpfile.js があるディレクトリに移動し、
 `npx gulp imagemin`：画像の圧縮
 
 `npx gulp js`：js ファイルをテーマへコピー
-
-`npx gulp font`：font ファイルをテーマへコピー
 
 `npx gulp assets`：assets フォルダをテーマへコピー
 
