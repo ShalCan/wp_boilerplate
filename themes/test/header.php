@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,user-scalable=yes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" rel="stylesheet" />
     <?php wp_head(); ?>
   </head>
