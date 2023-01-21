@@ -1,3 +1,65 @@
+// 色設定
+$colorBlack: #222;
+$colorWhite: #fff;
+$colorGray: #888;
+
+// 最大幅設定
+@mixin inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
 body { 
   background: #efefef;
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro",
+    "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic",
+    sans-serif;
+}
+
+.c {
+  &-header {
+    @include inner;
+    border-bottom: solid 1px $colorGray;
+    &_title {
+      color: $colorBlack;
+    }
+    &_subTitle {
+      color: $colorGray;
+    }
+  }
+  &-footer {
+    @include inner;
+    border-top: solid 1px $colorGray;
+    margin-top: 60px;
+  }
+  &-main {
+    @include inner;
+    margin-top: 60px;
+  }
+  &-button {
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    background: $colorWhite;
+    color: $colorBlack;
+    text-decoration: none;
+    width: 200px;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    span {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-top: 1px solid $colorBlack;
+      border-right: 1px solid $colorBlack;
+      transform: rotate(45deg) translateY(-50%);
+      position: absolute;
+      top: 50%;
+      right: 20px;
+    }
+  }
 }
