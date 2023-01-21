@@ -83,7 +83,7 @@ Docker Desktop を起動します。（なければ公式サイトからダウ�
 
 http://localhost:8000/ へアクセスして WordPress の初期設定を行い、制作したテーマを適応します。
 
-`docker-compose down` で Docker の停止が可能です。
+`docker-compose down` でコンテナの停止が可能です。
 
 ※gulp と docker は同時に起動することができます。
 
