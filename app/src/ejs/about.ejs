@@ -1,0 +1,17 @@
+<% 
+let title = '会社概要';
+let description = '会社概要ページのディスクリプション';
+let pageId = 'about'; 
+%>
+<%- include('./common/_header', { title, description, pageId }) %>
+
+<main class="aboutMain c-main">
+  <section class="aboutContents">
+    <div class="aboutContents_wrap">
+      <h2 class="aboutContents_title">会社について</h2>
+      <p class="aboutContents_text">テキスト</p>
+    </div>
+  </section>
+</main>
+
+<%- include('./common/_footer')  %>

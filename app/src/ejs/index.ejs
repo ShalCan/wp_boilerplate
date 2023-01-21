@@ -1,0 +1,17 @@
+<% 
+let title = 'トップページ'; 
+let description = 'トップページのディスクリプション'; 
+let pageId = 'home'; 
+%>
+<%- include('./common/_header', { title, description, pageId }) %>
+
+<main class="topMain c-main">
+  <section class="topContents">
+    <div class="topContents_wrap">
+      <h2 class="topContents_title">トップページ</h2>
+      <p class="topContents_text">テキスト</p>
+    </div>
+  </section>
+</main>
+
+<%- include('./common/_footer')  %>
