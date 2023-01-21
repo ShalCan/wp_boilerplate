@@ -79,11 +79,13 @@ https://www.videosmaller.com/jp/
 
 Docker Desktop を起動します。（なければ公式サイトからダウンロードしインストール）
 
-`docker-compose up` コマンドでコンテナを起動します。
+`docker-compose up -d` コマンドでコンテナを起動します。
 
-http://localhost:8000/ へアクセスして WordPress の初期設定を行います。
+http://localhost:8000/ へアクセスして WordPress の初期設定を行い、制作したテーマを適応します。
 
-※VScode でターミナルを分割することで gulp と docker は同時に起動することができます。
+`docker-compose down` で Docker の停止が可能です。
+
+※gulp と docker は同時に起動することができます。
 
 ### URL
 
