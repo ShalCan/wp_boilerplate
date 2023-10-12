@@ -5,7 +5,7 @@ const themeName = 'test'
 
 const bs = require("browser-sync")
 const { src, dest, series, parallel, watch } = require("gulp")
-const sass = require("gulp-sass")(require("sass"))
+const sass = require("gulp-dart-sass")
 const ejs = require("gulp-ejs")
 const htmlbeautify = require("gulp-html-beautify")
 const rename = require("gulp-rename")

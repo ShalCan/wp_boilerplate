@@ -13,14 +13,13 @@
     "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.3",
+    "gulp-dart-sass": "^1.1.0",
     "gulp-ejs": "^5.1.0",
     "gulp-html-beautify": "^1.0.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
     "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "sass": "^1.55.0"
+    "imagemin-pngquant": "^9.0.2"
   }
 }
