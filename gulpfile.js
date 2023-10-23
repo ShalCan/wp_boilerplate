@@ -3,6 +3,7 @@
 // 出力するWPテーマ名を記入
 const themeName = 'test'
 
+// gulp関連のモジュールを読み込む
 const bs = require("browser-sync")
 const { src, dest, series, parallel, watch } = require("gulp")
 const sass = require("gulp-dart-sass")
@@ -16,7 +17,7 @@ const pngquant = require('imagemin-pngquant')
 const changed = require('gulp-changed')
 const del = require("del")
 
-
+// BrowserSyncの初期化とサーバーの設定
 function bsInit(done) {
   bs.init({
     server: {
@@ -28,6 +29,7 @@ function bsInit(done) {
   done()
 }
 
+// scssをコンパイルして出力
 function scssCompile(done) {
   src("app/src/sass/**/*.scss")
   .pipe(
@@ -42,6 +44,7 @@ function scssCompile(done) {
   done()
 }
 
+// ejsをコンパイルしてhtmlに変換
 function ejsCompile(done) {
   src(["app/src/ejs/**/*.ejs", "!" + "app/src/ejs/**/_*.ejs"])
     .pipe(plumber())
@@ -56,6 +59,7 @@ function ejsCompile(done) {
     done()
 }
 
+// 画像を圧縮して出力
 function imageCompile(done) {
   src('app/product/assets/image/**/*')
   .pipe(changed(`themes/${themeName}/assets/image`))
@@ -76,6 +80,7 @@ function imageCompile(done) {
   done()
 }
 
+// jsファイルをテーマへコピー
 function jsPipe(done) {
   src('app/product/assets/js/**/*.js')
   .pipe(plumber())
@@ -84,6 +89,7 @@ function jsPipe(done) {
   done()
 }
 
+// アセットフォルダをテーマへコピー（画像は非圧縮）
 function assetsPipe(done) {
   src('app/product/assets/**')
   .pipe(plumber())
@@ -92,18 +98,21 @@ function assetsPipe(done) {
   done()
 }
 
+// BrowserSyncでリロード
 function bsReload(done) {
   bs.reload()
 
   done()
 }
 
+// アセットフォルダを削除
 function assetsDel(done) {
   del(`themes/${themeName}/assets`)
 
   done()
 }
 
+// ファイルの変更を監視してタスクを実行
 function watchTask(done) {
   watch(["app/src/sass/**/*.scss"], series(scssCompile))
   watch(["app/src/ejs/**/*.ejs"], series(ejsCompile))
@@ -112,7 +121,9 @@ function watchTask(done) {
   watch(["app/product/**"], series(bsReload))
 }
 
+// gulpのデフォルトタスク
 exports.default = series(bsInit, bsReload, watchTask)
+// 個別のタスク
 exports.sass = series(scssCompile)
 exports.ejs = series(ejsCompile)
 exports.imagemin = series(imageCompile)
