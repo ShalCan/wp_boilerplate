@@ -29,6 +29,13 @@ function bsInit(done) {
   done()
 }
 
+// BrowserSyncでリロード
+function bsReload(done) {
+  bs.reload()
+
+  done()
+}
+
 // scssをコンパイルして出力
 function scssCompile(done) {
   src("app/src/sass/**/*.scss")
@@ -94,13 +101,6 @@ function assetsPipe(done) {
   src('app/product/assets/**')
   .pipe(plumber())
   .pipe(dest(`themes/${themeName}/assets`))
-
-  done()
-}
-
-// BrowserSyncでリロード
-function bsReload(done) {
-  bs.reload()
 
   done()
 }
